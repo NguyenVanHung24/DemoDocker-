@@ -86,8 +86,8 @@
             email: document.getElementById('input-email').value,
             interests: document.getElementById('input-interests').value
         };
-
-        try {const response = await fetch('http://localhost:3000/update-profile', {
+        var response;
+        try {response = await fetch('http://localhost:3000/update-profile', {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
