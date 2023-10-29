@@ -87,14 +87,15 @@
             interests: document.getElementById('input-interests').value
         };
 
-        const response = await fetch('http://localhost:3000/update-profile', {
+        try {const response = await fetch('http://localhost:3000/update-profile', {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(payload)
-        });
+        });}
+        catch(error) {console.log(error)}
         const jsonResponse = await response.json();
 
         document.getElementById('name').textContent = jsonResponse.name;

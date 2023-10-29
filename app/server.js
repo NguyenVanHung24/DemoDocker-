@@ -13,10 +13,8 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 // custom middleware to enable CORS
 const cors = function(request, response, next) {
-  if(request.url.substring(0, 5).toLowerCase() == "/api/") { // only enable CORS on the RESTful API
       response.header("Access-Control-Allow-Origin", "*"); // CORS HEADER
       response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept"); // CORS HEADER
-  }
   next();
 };
 app.use(cors);
